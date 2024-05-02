@@ -23,7 +23,7 @@ const features = [
     {
       name: 'Software Development Lifecycle',
       description:
-        'Agile methodology: Standup, Kanban, Scrum.',
+        'Agile methodology: Standup, Kanban, Scrum, Requirement backlog management, Sprints.',
       icon: FingerPrintIcon,
     },
   ]
