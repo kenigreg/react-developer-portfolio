@@ -1,28 +1,22 @@
 import React from 'react';
 import { CheckIcon } from '@heroicons/react/20/solid'
 
-const includedFeatures = [
-    'Private forum access',
-    'Member resources',
-    'Entry to annual conference',
-    'Official member t-shirt',
-]
 
 const myProjects = [
     {
         projectName: "Curated",
         description: "This is a group React project that calls Harvard API for Artwork resource, which are then displayed in a curated manner.",
         techStack: ['ReactJS', 'JavaScript', 'Tailwind CSS', 'Fetch API Request'],
-        imageLink: '../public/Curated.png',
+        imageLink: '../Curated.png',
         gitHub: "https://github.com/yrezvani/curated",
         webPage: "https://curatedcanvas.netlify.app/",
     },
 
     {
         projectName: "Password Generator",
-        description: "Application that can generate random passwords based on user&apos;s criteria",
+        description: "Application that can generate random passwords based on user's criteria",
         techStack: ['JavaScript', 'HTML', 'CSS'],
-        imageLink: '../public/05-javascript-challenge-demo.png',
+        imageLink: '../05-javascript-challenge-demo.png',
         gitHub: "https://github.com/kenigreg/Password-Generator",
         webPage: "https://kenigreg.github.io/Password-Generator/",
     },
@@ -31,7 +25,7 @@ const myProjects = [
         projectName: "FlickFinder",
         description: "This is a group project that utilises resources from API calls to TMDB API, WatchThis API and Google YouTube API. The application allows a user to generate movie recommendation from user input. ",
         techStack: ['JavaScript', 'jQuery', 'HTML', 'CSS', 'Bootstrap', 'Fetch API Request'],
-        imageLink: '../public/FlickFinder.png',
+        imageLink: '../FlickFinder.png',
         gitHub: "https://github.com/Dezmondo7/movie-recommender",
         webPage: "https://dezmondo7.github.io/movie-recommender/",
     },
@@ -40,20 +34,20 @@ const myProjects = [
 function Projects() {
 
     return (
-        <div id='projects' className="bg-white py-24 sm:py-32">
+    <div id='projects' className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl sm:text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Projects</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">PROJECTS</h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             Here you will find the personal and group projects I&apos;ve completed with links to the GitHub repository and deployed site.
           </p>
-        </div>
-        <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
+                </div>
+        {myProjects.map((project, index) => (
+        <div key={index} className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
           <div className="p-8 sm:p-10 lg:flex-auto">
-            <h3 className="text-2xl font-bold tracking-tight text-gray-900">Lifetime membership</h3>
+            <h3 className="text-2xl font-bold tracking-tight text-gray-900">{project.projectName}</h3>
             <p className="mt-6 text-base leading-7 text-gray-600">
-              Lorem ipsum dolor sit amet consect etur adipisicing elit. Itaque amet indis perferendis blanditiis
-              repellendus etur quidem assumenda.
+              {project.description}
             </p>
             <div className="mt-10 flex items-center gap-x-4">
               <h4 className="flex-none text-sm font-semibold leading-6 text-indigo-600">Tech Stack</h4>
@@ -63,7 +57,7 @@ function Projects() {
               role="list"
               className="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6"
             >
-              {includedFeatures.map((feature) => (
+              {project.techStack.map((feature) => (
                 <li key={feature} className="flex gap-x-3">
                   <CheckIcon className="h-6 w-5 flex-none text-indigo-600" aria-hidden="true" />
                   {feature}
@@ -72,20 +66,29 @@ function Projects() {
             </ul>
           </div>
           <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
-            <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
+            <div className="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-10">
               <div className="mx-auto max-w-xs px-8">
-                <img className="h-auto max-w-full" src="../public/FlickFinder.png" alt="img" />
+                <img className="max-w-full" src={project.imageLink} alt="img" />
                 <a
-                  href="#"
-                  className="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                 href={project.gitHub}
+                 target="_blank"
+                  className="mt-5 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   GitHub Repository
+                </a>
+                <a
+                 href={project.webPage} 
+                 target="_blank"
+                 className="mt-5 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  Web Page
                 </a>
                 
               </div>
             </div>
           </div>
-        </div>
+                </div>
+            ))}
       </div>
     </div>
     )
