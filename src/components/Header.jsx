@@ -18,14 +18,14 @@ function Header() {
         <div className="bg-white">
       <header className="absolute inset-x-0 top-0 z-50">
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-          <div className="flex lg:flex-1">
+          <div className="flex lg:flex-1 -space-x-2 overflow-hidden">
             <a href="#home" className="-m-1.5 p-1.5">
-              <span className="sr-only">Gregory Oghenah</span>
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
-              />
+            <img
+          className="inline-block h-16 w-16 rounded-full ring-2 ring-indigo-600"
+          src="../MyPics.jpeg"
+          alt=""
+        />
+            <span className="text-xl font-semibold text-gray-900 ml-4">Gregory Oghenah</span>
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -46,8 +46,8 @@ function Header() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Log in <span aria-hidden="true">&rarr;</span>
+            <a href="https://docs.google.com/document/d/1WQGIJc_s7XvHB6iUGlFIv4r-_PlRIqPL/edit?usp=sharing&ouid=103469174428265984694&rtpof=true&sd=true" className="text-m font-semibold leading-6 text-gray-900" target="_blank">
+              Resume <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </nav>
@@ -114,9 +114,9 @@ function Header() {
         </div>
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+            <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
             Hi, I&apos;m Gregory Oghenah
-            </h1>
+            </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
             I am a diligent and versatile software developer who has recently graduated from a Frontend Web Development coding boot camp.
             </p>
